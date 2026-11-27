@@ -13,7 +13,7 @@
   <div><span>TIME</span><b id="hTime">60.0</b></div>
   <div><span>SCORE</span><b id="hScore">0</b></div>
   <div><span>ACCURACY</span><b id="hAcc">100%</b></div>
-  <div><span>COMBO</span><b id="hCombo">0</b></div>
+  <div><span id="hComboL">COMBO</span><b id="hCombo">0</b></div>
 </div>
 <div id="count" class="hide"></div>
 
@@ -26,8 +26,11 @@
       <div class="card on" data-m="grid"><b>그리드샷</b><small>타겟 3개가 동시에 떠 있어요. 빠르게 연속으로 맞히기</small><i id="b_grid"></i></div>
       <div class="card" data-m="flick"><b>플릭샷</b><small>작은 타겟 1개가 멀리 랜덤 등장. 한 번에 끊어 쏘기</small><i id="b_flick"></i></div>
       <div class="card" data-m="track"><b>트래킹</b><small>움직이는 타겟을 조준선으로 계속 따라가기 (클릭 불필요)</small><i id="b_track"></i></div>
+      <div class="card" data-m="duel"><b>교전</b><small>엄폐물 사이에서 발소리를 듣고 적을 처치. 적도 나를 쏴요</small><i id="b_duel"></i></div>
     </div>
     <h3>SETTINGS</h3>
+    <div class="row"><label>난이도</label><div class="chips" id="diffs">
+      <span class="chip" data-f="easy">쉬움</span><span class="chip on" data-f="normal">보통</span><span class="chip" data-f="hard">어려움</span><span class="chip" data-f="hell">지옥</span></div></div>
     <div class="row"><label>시간</label><div class="chips" id="durs">
       <span class="chip" data-d="30">30초</span><span class="chip on" data-d="60">60초</span><span class="chip" data-d="120">120초</span></div></div>
     <div class="row"><label>마우스 감도</label><input type="range" id="sens" min="0.2" max="3" step="0.05" value="1"><output id="sensO">1.00</output></div>
@@ -37,6 +40,7 @@
     <div class="row"><label>효과음</label><div class="chips" id="snd"><span class="chip on" data-s="1">켜기</span><span class="chip" data-s="0">끄기</span></div></div>
     <button id="start">START</button>
     <p class="tip">마우스로 조준 · 좌클릭 사격 · ESC 일시정지 · R 재시작</p>
+    <p class="tip">교전 모드: WASD 이동 · Shift 걷기 · 좌클릭 누르고 있으면 연사 · R 재장전 · 이어폰 추천</p>
   </div>
 </div>
 
@@ -57,8 +61,8 @@
       <div><span>정확도</span><b id="rAcc"></b></div>
       <div><span id="rHitL">명중</span><b id="rHit"></b></div>
       <div><span id="rTtkL">평균 처치 시간</span><b id="rTtk"></b></div>
-      <div><span>최대 콤보</span><b id="rCombo"></b></div>
-      <div><span>초당 처치</span><b id="rKps"></b></div>
+      <div><span id="rComboL">최대 콤보</span><b id="rCombo"></b></div>
+      <div><span id="rKpsL">초당 처치</span><b id="rKps"></b></div>
       <div><span>최고 기록</span><b id="rBest"></b></div>
     </div>
     <button id="again">다시 하기</button>
